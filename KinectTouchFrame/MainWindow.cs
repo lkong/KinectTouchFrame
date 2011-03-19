@@ -356,6 +356,34 @@ namespace UserTracker.net
             return nearestUser;
         }
 
+        public Dictionary<String, Point> getHands(int width,int height)
+        {
+            Dictionary<String, Point> handspos = new Dictionary<string, Point>();
+            uint[] users = this.userGenerator.GetUsers();
+            foreach (uint user in users)
+            {
+                if (this.skeletonCapbility.IsTracking(user))
+                {
+                    GetJoints(user);
+                    Dictionary<SkeletonJoint, SkeletonJointPosition> dict = this.joints[user];
+                    Point3D LeftHand = dict[SkeletonJoint.LeftHand].position;
+                    Point3D RightHand = dict[SkeletonJoint.RightHand].position;
+                    Point LeftHandScreenPos = TransformToScreenPos(LeftHand, width, height);
+                    Point RightHandScreenPos = TransformToScreenPos(RightHand, width, height);
+                    String userLeftHand=Convert.ToString(user);
+                    String userRightHand=Convert.ToString(user);
+                    userLeftHand+=" Lefthand";
+                    userRightHand+=" Righthand";
+                    handspos.Add(userLeftHand, LeftHandScreenPos);
+                    handspos.Add(userRightHand, RightHandScreenPos);
+                }
+
+
+            }
+            return handspos;
+        }
+
+
         private Point TransformToScreenPos(Point3D p,int width,int height)
         {
             Point re=new Point(0,0);

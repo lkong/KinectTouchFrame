@@ -35,6 +35,7 @@ namespace KinectTouchFrame
         {
             int X = (int)e.GetTouchPoint(this).Position.X;
             int Y = (int)e.GetTouchPoint(this).Position.Y;
+            watchingWindow.getHands((int)this.Width, (int)this.Height);
             Console.Out.WriteLine(watchingWindow.GetUser(X, Y, (int)this.Width, (int)this.Height));
         }
         private KinectWindow watchingWindow;
