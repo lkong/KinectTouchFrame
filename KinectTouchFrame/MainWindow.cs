@@ -155,6 +155,7 @@ namespace UserTracker.net
                 break;
             case 'm':
                 this.SaveBitmap =true;
+                SelectedMinX = MinX;SelectedMinY = MinY;SelectedMaxX = MaxX;SelectedMaxY = MaxY;
                 //avgSelectedDepth = avgDepth;
                 //Console.Out.WriteLine("Depth of selected = " + avgSelectedDepth);
                 break;
@@ -389,10 +390,10 @@ namespace UserTracker.net
             Point re=new Point(0,0);
             float tmpX = p.X;
             float tmpY = p.Y;
-            if (tmpX < MinX || tmpY < MinY) return re;
-            tmpX = tmpX - MinX; tmpY = tmpY - MinY;
-            tmpX = tmpX / (MaxX - MinX) * width;
-            tmpY = tmpY / (MaxY - MinY) * height;
+            if (tmpX < SelectedMinX || tmpY < SelectedMinY) return re;
+            tmpX = tmpX - SelectedMinX; tmpY = tmpY - SelectedMinY;
+            tmpX = tmpX / (SelectedMaxX - SelectedMinX) * width;
+            tmpY = tmpY / (SelectedMaxY - SelectedMinY) * height;
             re.X = (int)tmpX;
             re.Y = (int)tmpY;
             return re;
@@ -595,6 +596,10 @@ namespace UserTracker.net
         int MaxX;
         int MinY;
         int MaxY;
+        int SelectedMinX;
+        int SelectedMaxX;
+        int SelectedMinY;
+        int SelectedMaxY;
         private bool shouldDrawPixels = true;
         private bool shouldDrawBackground = true;
         private bool shouldPrintID = true;
