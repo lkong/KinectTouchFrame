@@ -349,6 +349,7 @@ namespace UserTracker.net
                         nearestUser = user;
                     if (Math.Abs(X - TransformToScreenPos(RightHand, width, height).X) < BelongingThresold && Math.Abs(Y - TransformToScreenPos(RightHand, width, height).Y) < BelongingThresold)
                         nearestUser = user;
+                    Console.Out.WriteLine("Get Touch in " + X + " , " + Y + " Selected Region " + SelectedMinX + " to " + SelectedMaxX + " , " + SelectedMinY + " to " + SelectedMaxY + " Transform to " + TransformToScreenPos(RightHand, width, height).X + " , " + TransformToScreenPos(RightHand, width, height).Y); 
                     //e.GetTouchPoint().
                 }
 
