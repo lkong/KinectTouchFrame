@@ -4,6 +4,7 @@
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     Title="KinectTouchFrame"
                  TouchDown="SurfaceWindow_TouchDown"
+                Width="1200" Height="1600"
     >
   <s:SurfaceWindow.Resources>
     <ImageBrush x:Key="WindowBackground" Stretch="None" Opacity="0.6" ImageSource="pack://application:,,,/Resources/WindowBackground.jpg"/>
@@ -11,6 +12,6 @@
 
   <Grid Background="{StaticResource WindowBackground}" 
         Name="DrawingGrid">
-
-  </Grid>
+        <Canvas Height="1600" HorizontalAlignment="Left" Margin="0,0,0,0" Name="canvas1" VerticalAlignment="Top" Width="1200" />
+    </Grid>
 </s:SurfaceWindow>
