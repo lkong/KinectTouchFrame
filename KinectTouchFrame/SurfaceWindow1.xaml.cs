@@ -52,6 +52,7 @@ namespace KinectTouchFrame
             {
                 System.Drawing.Point HandPoint = pair.Value;
                 String HandString = pair.Key;
+                Console.Out.WriteLine("Hand in " + HandPoint.X + " , " + HandPoint.Y);
                 if (HandPoint.X != 0 && HandPoint.Y != 0)
                     if (HandPoint.X < (int)this.Width && HandPoint.Y < (int)this.Height)
                     {
@@ -59,9 +60,9 @@ namespace KinectTouchFrame
                         HandRange.Fill = System.Windows.Media.Brushes.DarkBlue;
                         HandRange.Width = 100;
                         HandRange.Height = 100;
-                        RotateTransform pos = new RotateTransform();
-                        pos.CenterX = HandPoint.X;
-                        pos.CenterY = HandPoint.Y;
+                        TranslateTransform pos = new TranslateTransform();
+                        pos.X = HandPoint.X;
+                        pos.Y = HandPoint.Y;
                         HandRange.RenderTransform = pos;
                         // HandRange.
                         DrawingGrid.Children.Add(HandRange);
