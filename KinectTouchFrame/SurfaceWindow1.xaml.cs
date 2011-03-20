@@ -54,7 +54,7 @@ namespace KinectTouchFrame
             handRange.RenderTransform = null;
             handRange.RenderTransform = Pos;
             // HandRange.
-            DrawingGrid.Children.Add(handRange);
+            DrawingCanvas.Children.Add(handRange);
 
             //testover
 
@@ -82,8 +82,8 @@ namespace KinectTouchFrame
                         HandRange.RenderTransform = null; 
                         HandRange.RenderTransform = pos;
                         // HandRange.
-                        DrawingGrid.Children.Add(HandRange);
                         
+                        DrawingCanvas.Children.Add(HandRange);
                         Console.Out.WriteLine(HandString+" in " + HandPoint.X + " , " + HandPoint.Y);
                     }
             }

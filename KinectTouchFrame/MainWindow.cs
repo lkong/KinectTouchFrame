@@ -546,7 +546,7 @@ namespace UserTracker.net
                             if (com.Z < avgSelectedDepth - DistanceThresold || com.Z > avgSelectedDepth + DistanceThresold)
                                 label += " TOO FAR";
                             else
-                                Console.Out.WriteLine("Catch u at " + com.Z + " within " + (avgSelectedDepth - DistanceThresold) + " and " + (avgSelectedDepth + DistanceThresold));
+                                ;//Console.Out.WriteLine("Catch u at " + com.Z + " within " + (avgSelectedDepth - DistanceThresold) + " and " + (avgSelectedDepth + DistanceThresold));
                             g.DrawString(label, new Font("Arial", 10), new SolidBrush(anticolors[user % ncolors]), com.X, com.Y);
 
                         }
@@ -586,8 +586,8 @@ namespace UserTracker.net
 		private Bitmap bitmap;
 		private int[] histogram;
 
-        private int DistanceThresold = 300;
-        public int BelongingThresold = 20;
+        private int DistanceThresold = 3000;
+        public int BelongingThresold = 200;
 
         private Dictionary<uint, Dictionary<SkeletonJoint, SkeletonJointPosition>> joints;
 

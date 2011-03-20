@@ -12,6 +12,6 @@
 
   <Grid Background="{StaticResource WindowBackground}" 
         Name="DrawingGrid">
-        <Canvas Height="1600" HorizontalAlignment="Left" Margin="0,0,0,0" Name="canvas1" VerticalAlignment="Top" Width="1200" />
+        <Canvas Name="DrawingCanvas" Height="1600" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="1200" />
     </Grid>
 </s:SurfaceWindow>
