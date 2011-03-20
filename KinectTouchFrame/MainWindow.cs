@@ -391,11 +391,13 @@ namespace UserTracker.net
             float tmpX = p.X;
             float tmpY = p.Y;
             if (tmpX < SelectedMinX || tmpY < SelectedMinY) return re;
+            if (tmpX > SelectedMaxX || tmpY > SelectedMaxY) return re;
             tmpX = tmpX - SelectedMinX; tmpY = tmpY - SelectedMinY;
             tmpX = tmpX / (SelectedMaxX - SelectedMinX) * width;
             tmpY = tmpY / (SelectedMaxY - SelectedMinY) * height;
             re.X = (int)tmpX;
             re.Y = (int)tmpY;
+            if (flipped) { re.X = width - re.X;}
             return re;
         }
 
@@ -600,6 +602,7 @@ namespace UserTracker.net
         int SelectedMaxX;
         int SelectedMinY;
         int SelectedMaxY;
+        bool flipped = true;
         private bool shouldDrawPixels = true;
         private bool shouldDrawBackground = true;
         private bool shouldPrintID = true;
