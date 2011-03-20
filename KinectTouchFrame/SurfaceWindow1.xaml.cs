@@ -49,8 +49,8 @@ namespace KinectTouchFrame
             handRange.Width = 100;
             handRange.Height = 100;
             TranslateTransform Pos = new TranslateTransform();
-            Pos.X = (int)e.GetTouchPoint(this).Position.X-this.Width/2;
-            Pos.Y = (int)e.GetTouchPoint(this).Position.Y-this.Height/2;
+            Pos.X = (int)e.GetTouchPoint(this).Position.X;//-this.Width/2;
+            Pos.Y = (int)e.GetTouchPoint(this).Position.Y;//-this.Height/2;
             handRange.RenderTransform = null;
             handRange.RenderTransform = Pos;
             // HandRange.
@@ -77,8 +77,8 @@ namespace KinectTouchFrame
                         HandRange.Width = 100;
                         HandRange.Height = 100;
                         TranslateTransform pos = new TranslateTransform();
-                        pos.X = HandPoint.X-this.Width/2;
-                        pos.Y = HandPoint.Y-this.Height/2;
+                        pos.X = HandPoint.X;//-this.Width/2;
+                        pos.Y = HandPoint.Y;// -this.Height / 2;
                         HandRange.RenderTransform = null; 
                         HandRange.RenderTransform = pos;
                         // HandRange.
