@@ -43,6 +43,22 @@ namespace KinectTouchFrame
 
         private void SurfaceWindow_TouchDown(object sender, TouchEventArgs e)
         {
+            //test
+            Ellipse handRange = new Ellipse();
+            handRange.Fill = System.Windows.Media.Brushes.DeepPink;
+            handRange.Width = 100;
+            handRange.Height = 100;
+            TranslateTransform Pos = new TranslateTransform();
+            Pos.X = (int)e.GetTouchPoint(this).Position.X-this.Width/2;
+            Pos.Y = (int)e.GetTouchPoint(this).Position.Y-this.Height/2;
+            handRange.RenderTransform = null;
+            handRange.RenderTransform = Pos;
+            // HandRange.
+            DrawingGrid.Children.Add(handRange);
+
+            //testover
+
+
             int X = (int)e.GetTouchPoint(this).Position.X;
             int Y = (int)e.GetTouchPoint(this).Position.Y;
             watchingWindow.getHands((int)this.Width, (int)this.Height);
@@ -68,13 +84,12 @@ namespace KinectTouchFrame
                         // HandRange.
                         DrawingGrid.Children.Add(HandRange);
                         
-                        Console.Out.WriteLine("Hand in " + HandPoint.X + " , " + HandPoint.Y);
+                        Console.Out.WriteLine(HandString+" in " + HandPoint.X + " , " + HandPoint.Y);
                     }
             }
         }
         private static KinectWindow watchingWindow;
         private static int WindowsWidth;
         private static int WindowsHeight;
-
     }
 }
