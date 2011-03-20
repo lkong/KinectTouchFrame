@@ -52,7 +52,7 @@ namespace KinectTouchFrame
             {
                 System.Drawing.Point HandPoint = pair.Value;
                 String HandString = pair.Key;
-                Console.Out.WriteLine("Hand in " + HandPoint.X + " , " + HandPoint.Y);
+                //Console.Out.WriteLine("Hand in " + HandPoint.X + " , " + HandPoint.Y);
                 if (HandPoint.X != 0 && HandPoint.Y != 0)
                     if (HandPoint.X < (int)this.Width && HandPoint.Y < (int)this.Height)
                     {
