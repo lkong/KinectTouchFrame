@@ -63,9 +63,11 @@ namespace KinectTouchFrame
                         TranslateTransform pos = new TranslateTransform();
                         pos.X = HandPoint.X-this.Width/2;
                         pos.Y = HandPoint.Y-this.Height/2;
+                        HandRange.RenderTransform = null; 
                         HandRange.RenderTransform = pos;
                         // HandRange.
                         DrawingGrid.Children.Add(HandRange);
+                        
                         Console.Out.WriteLine("Hand in " + HandPoint.X + " , " + HandPoint.Y);
                     }
             }
